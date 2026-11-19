@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster – The Ultimate Knowledge Challenge</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  
+  <!-- Google Fonts: Cinzel for Royal Headers & Outfit for crisp game UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="royal-theme">
+
+  <!-- Background Decorative Canvas & Patterns -->
+  <div class="bg-pattern-layer" aria-hidden="true"></div>
+  <div class="bg-vignette-layer" aria-hidden="true"></div>
+
+  <!-- Main Game Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <!-- Brand Logo / Title -->
+      <div class="brand-crest" data-navigate="home-screen" role="button" tabindex="0" title="Return to Home">
+        <div class="crest-shield">
+          <span class="crest-icon">👑</span>
+        </div>
+        <div class="crest-text">
+          <h1 class="brand-title">QUIZ<span>MASTER</span></h1>
+          <span class="brand-subtitle">THE ULTIMATE CHALLENGE</span>
+        </div>
+      </div>
+
+      <!-- Quick Player Profile / XP Status -->
+      <div class="header-player-pill" data-navigate="dashboard-screen" role="button" tabindex="0" title="Open Player Dashboard">
+        <div class="header-avatar" id="header-avatar-icon">👑</div>
+        <div class="header-info">
+          <span class="header-name" id="header-player-name">Player</span>
+          <div class="header-meta">
+            <span class="header-rank" id="header-player-rank">🌱 Rookie</span>
+            <span class="header-xp-badge" id="header-player-xp">0 XP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Controls: Sound & Nav -->
+      <div class="header-actions">
+        <button class="btn-sound-toggle" aria-label="Toggle Sound" title="Toggle Sound">
+          <span class="sound-icon">🔊</span>
+          <span class="sound-text">Sound ON</span>
+        </button>
+        <button class="btn-header-nav" data-navigate="dashboard-screen" title="Player Dashboard">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Viewport -->
+  <main class="main-viewport">
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 1: HOME SCREEN                                        -->
+    <!-- ============================================================ -->
+    <section id="home-screen" class="app-screen active">
+      <div class="home-container">
+        
+        <!-- Royal Hero Banner -->
+        <div class="hero-crest-badge">
+          <div class="royal-crown-emblem">👑</div>
+          <div class="royal-stars">★★★★★</div>
+        </div>
+        
+        <h2 class="hero-main-title">QUIZMASTER</h2>
+        <p class="hero-tagline">Think Fast. Learn More. Beat the Challenge.</p>
+        
+        <div class="gold-filigree-divider">
+          <span class="filigree-diamond">◆</span>
+        </div>
+
+        <!-- Main Action CTA: Play Now -->
+        <div class="hero-cta-area">
+          <button id="btn-home-play-now" class="btn-royal-play">
+            <div class="btn-play-inner">
+              <span class="play-icon">⚔️</span>
+              <div class="play-labels">
+                <span class="play-title">PLAY NOW</span>
+                <span class="play-subtitle">15 Mixed Questions • Progressive Challenge</span>
+              </div>
+              <span class="play-arrow">➔</span>
+            </div>
+            <div class="gold-shimmer"></div>
+          </button>
+        </div>
+
+        <!-- Home Grid: Daily Challenge & Player Rank Card -->
+        <div class="home-cards-grid">
+          
+          <!-- Daily Challenge Section -->
+          <div class="game-panel-card daily-challenge-card">
+            <div class="card-corner-filigree top-left"></div>
+            <div class="card-corner-filigree top-right"></div>
+            <div class="panel-header">
+              <div class="panel-icon-wrap gold-glow">📅</div>
+              <div>
+                <span class="daily-badge available" id="daily-challenge-badge">TODAY'S CHALLENGE</span>
+                <h3 class="panel-title">Daily Challenge</h3>
+              </div>
+            </div>
+            <p class="panel-desc" id="daily-challenge-status-text">
+              5 Mixed Questions • Test your daily knowledge & earn <strong>+100 Bonus XP</strong>!
+            </p>
+            <div class="panel-footer">
+              <button id="btn-home-daily-challenge" class="btn-gold-pulse">
+                <span>Play Daily Challenge</span>
+                <i class="icon-arrow">➔</i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Player Rank & XP Progress Section -->
+          <div class="game-panel-card player-preview-card" data-navigate="dashboard-screen" role="button" tabindex="0">
+            <div class="card-corner-filigree top-left"></div>
+            <div class="card-corner-filigree top-right"></div>
+            <div class="panel-header">
+              <div class="panel-icon-wrap" id="home-rank-badge">🌱</div>
+              <div>
+                <span class="sub-label">CURRENT RANK</span>
+                <h3 class="panel-title" id="home-rank-title">Rookie</h3>
+              </div>
+            </div>
+            <div class="rank-stat-row">
+              <span class="stat-lbl" id="home-player-level">Level 1</span>
+              <span class="stat-val text-gold" id="home-total-xp">0 XP</span>
+            </div>
+            <div class="xp-progress-track">
+              <div class="xp-progress-fill" id="home-xp-progress-fill" style="width: 0%;"></div>
+            </div>
+            <div class="panel-footer">
+              <span class="link-label">View Full Dashboard & History ➔</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Secondary Buttons (How to Play, Rules) -->
+        <div class="home-secondary-actions">
+          <button id="btn-how-to-play" class="btn-wood-gold">
+            <span class="btn-icon">📜</span>
+            <span>How to Play & Game Rules</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 2: GAMEPLAY SCREEN                                    -->
+    <!-- ============================================================ -->
+    <section id="game-screen" class="app-screen hidden">
+      <div class="game-container">
+        
+        <!-- Top Game HUD -->
+        <div class="game-hud-bar">
+          <!-- Question Counter -->
+          <div class="hud-item question-counter-pill">
+            <span class="hud-label">QUESTION</span>
+            <span class="hud-value"><strong id="current-question-num">1</strong> / <span id="total-question-num">15</span></span>
+          </div>
+
+          <!-- Topic Badge -->
+          <div class="hud-item topic-badge-wrap">
+            <span class="topic-pill-badge" id="question-category-badge">SPORTS</span>
+          </div>
+
+          <!-- Difficulty Pill -->
+          <div class="hud-item difficulty-wrap">
+            <span class="difficulty-pill" id="difficulty-badge">Easy</span>
+          </div>
+
+          <!-- Question XP Reward -->
+          <div class="hud-item xp-badge-wrap">
+            <span class="xp-reward-pill" id="question-xp-badge">+10 XP</span>
+          </div>
+
+          <!-- Quit Match Button -->
+          <button id="btn-quit-game" class="btn-hud-quit" title="Forfeit Match">
+            <span>Quit</span> ✕
+          </button>
+        </div>
+
+        <!-- Overall Progress Line -->
+        <div class="game-progress-track">
+          <div class="game-progress-fill" id="game-progress-fill" style="width: 6.6%;"></div>
+        </div>
+
+        <!-- Central Game Arena: Question & Timer -->
+        <div class="game-arena-card">
+          <div class="arena-corner top-left"></div>
+          <div class="arena-corner top-right"></div>
+          <div class="arena-corner bottom-left"></div>
+          <div class="arena-corner bottom-right"></div>
+
+          <!-- Question Header with Circular Timer -->
+          <div class="arena-top-row">
+            <!-- 45-Second Real-Time Circular Timer -->
+            <div class="timer-widget timer-normal" id="timer-widget">
+              <svg class="timer-svg" viewBox="0 0 80 80">
+                <circle class="timer-bg-circle" cx="40" cy="40" r="34"></circle>
+                <circle class="timer-progress-circle" id="timer-svg-circle" cx="40" cy="40" r="34"></circle>
+              </svg>
+              <div class="timer-center-content">
+                <span class="timer-number" id="timer-seconds-text">45</span>
+                <span class="timer-unit">SEC</span>
+              </div>
+            </div>
+
+            <!-- Untimed Challenge Indicator (Questions 11 to 15) -->
+            <div class="untimed-badge" id="untimed-badge" style="display: none;">
+              <div class="untimed-icon-wrap">
+                <span class="untimed-icon">⏳</span>
+              </div>
+              <div class="untimed-labels">
+                <span class="untimed-title">UNTIMED</span>
+                <span class="untimed-sub">Take Your Time</span>
+              </div>
+            </div>
+
+            <!-- Lifelines Deck -->
+            <div class="lifelines-deck">
+              <button id="lifeline-5050" class="lifeline-btn" title="50:50 Lifeline">
+                <div class="lifeline-coin">
+                  <span class="lifeline-icon">✂️</span>
+                </div>
+                <span class="lifeline-text">50 : 50</span>
+                <span class="lifeline-status">AVAILABLE</span>
+              </button>
+
+              <button id="lifeline-hint" class="lifeline-btn" title="Brain Hint Lifeline">
+                <div class="lifeline-coin">
+                  <span class="lifeline-icon">💡</span>
+                </div>
+                <span class="lifeline-text">BRAIN HINT</span>
+                <span class="lifeline-status">AVAILABLE</span>
+              </button>
+
+              <button id="lifeline-second-chance" class="lifeline-btn" title="Second Chance Lifeline">
+                <div class="lifeline-coin">
+                  <span class="lifeline-icon">🛡️</span>
+                </div>
+                <span class="lifeline-text">2ND CHANCE</span>
+                <span class="lifeline-status">AVAILABLE</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Prompt Text -->
+          <div class="question-prompt-box">
+            <h3 class="question-text" id="question-text">
+              Loading question...
+            </h3>
+          </div>
+
+          <!-- 4 Answer Options Grid -->
+          <div class="options-grid" id="options-container">
+            <!-- Dynamically populated buttons -->
+          </div>
+
+          <!-- Educational Explanation Card (Reveals Post-Lock) -->
+          <div class="explanation-card" id="explanation-card">
+            <!-- Injected on answer confirmation -->
+          </div>
+
+          <!-- Primary Actions (Lock Answer / Continue) -->
+          <div class="game-action-bar" id="game-action-buttons">
+            <button id="btn-lock-answer" class="btn-royal-lock" disabled>
+              <span>Lock Answer</span>
+              <span class="lock-icon">🔒</span>
+            </button>
+            <button id="btn-next-question" class="btn-gold primary-action-btn" style="display: none;">
+              <span>Next Question</span>
+              <i class="icon-arrow">➔</i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 3: GAME OVER SCREEN                                   -->
+    <!-- ============================================================ -->
+    <section id="gameover-screen" class="app-screen hidden">
+      <div class="gameover-container">
+        <div class="result-banner defeat-banner">
+          <div class="result-icon-circle defeat-icon">⚔️</div>
+          <h2 class="result-heading">GAME OVER</h2>
+          <p class="result-sub-heading" id="gameover-final-level">Question 7 of 15</p>
+        </div>
+
+        <!-- Match Stats Grid -->
+        <div class="results-stats-grid">
+          <div class="res-stat-card">
+            <span class="res-stat-icon">✓</span>
+            <span class="res-stat-label">Correct</span>
+            <span class="res-stat-value text-green" id="gameover-correct">0</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">✗</span>
+            <span class="res-stat-label">Wrong</span>
+            <span class="res-stat-value text-crimson" id="gameover-wrong">1</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">⭐</span>
+            <span class="res-stat-label">XP Gained</span>
+            <span class="res-stat-value text-gold" id="gameover-xp">+0 XP</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">🎯</span>
+            <span class="res-stat-label">Accuracy</span>
+            <span class="res-stat-value" id="gameover-accuracy">0%</span>
+          </div>
+        </div>
+
+        <!-- Fatal Question Breakdown Card -->
+        <div class="fatal-question-wrapper" id="fatal-question-card">
+          <!-- Dynamically populated with fatal question details -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="results-actions-row">
+          <button class="btn-gold btn-play-again">
+            <span class="btn-icon">🔄</span>
+            <span>Play Again</span>
+          </button>
+          <button class="btn-royal-emerald btn-review-answers">
+            <span class="btn-icon">📜</span>
+            <span>Review Answers</span>
+          </button>
+          <button class="btn-wood-gold" data-navigate="dashboard-screen">
+            <span class="btn-icon">📊</span>
+            <span>Go to Dashboard</span>
+          </button>
+          <button class="btn-wood-gold" data-navigate="home-screen">
+            <span class="btn-icon">🏠</span>
+            <span>Home</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 4: VICTORY SCREEN                                     -->
+    <!-- ============================================================ -->
+    <section id="victory-screen" class="app-screen hidden">
+      <div class="victory-container">
+        
+        <!-- Confetti container -->
+        <div class="confetti-container" id="victory-confetti-container" aria-hidden="true"></div>
+
+        <div class="result-banner victory-banner">
+          <div class="victory-crown-trophy">👑</div>
+          <div class="royal-stars">★★★★★</div>
+          <h2 class="victory-heading">KNOWLEDGE CHAMPION!</h2>
+          <p class="victory-subtitle">Flawless Victory • All 15 Questions Conquered!</p>
+          <span class="victory-bonus-tag" id="victory-bonus-xp">+100 XP Victory Bonus included!</span>
+        </div>
+
+        <!-- Victory Stats Grid -->
+        <div class="results-stats-grid">
+          <div class="res-stat-card">
+            <span class="res-stat-icon">🏆</span>
+            <span class="res-stat-label">Questions</span>
+            <span class="res-stat-value text-green" id="victory-correct-count">15/15</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">🎯</span>
+            <span class="res-stat-label">Accuracy</span>
+            <span class="res-stat-value text-gold" id="victory-accuracy">100%</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">⚡</span>
+            <span class="res-stat-label">Highest Level</span>
+            <span class="res-stat-value">Extreme</span>
+          </div>
+          <div class="res-stat-card">
+            <span class="res-stat-icon">👑</span>
+            <span class="res-stat-label">Total XP Earned</span>
+            <span class="res-stat-value text-gold" id="victory-xp-earned">+550 XP</span>
+          </div>
+        </div>
+
+        <!-- Achievement Card -->
+        <div class="achievement-unlocked-card">
+          <div class="achieve-icon">🎖️</div>
+          <div class="achieve-info">
+            <span class="achieve-tag">ACHIEVEMENT UNLOCKED</span>
+            <h4 class="achieve-title">Master of All Realms</h4>
+            <p class="achieve-desc">Answered all 15 mixed-topic progressive questions with zero fatal errors.</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="results-actions-row">
+          <button class="btn-gold btn-play-again">
+            <span class="btn-icon">⚔️</span>
+            <span>Play Again</span>
+          </button>
+          <button class="btn-royal-emerald btn-review-answers">
+            <span class="btn-icon">📜</span>
+            <span>Review Answers</span>
+          </button>
+          <button class="btn-wood-gold" data-navigate="dashboard-screen">
+            <span class="btn-icon">📊</span>
+            <span>Go to Dashboard</span>
+          </button>
+          <button class="btn-wood-gold" data-navigate="home-screen">
+            <span class="btn-icon">🏠</span>
+            <span>Home</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 5: ANSWER REVIEW SCREEN                               -->
+    <!-- ============================================================ -->
+    <section id="review-screen" class="app-screen hidden">
+      <div class="review-container">
+        
+        <div class="review-header-bar">
+          <div>
+            <h2 class="review-title">Match Review & Insights</h2>
+            <p class="review-subtitle">Examine every question, choices, and educational explanations.</p>
+          </div>
+          <div class="review-nav-actions">
+            <button class="btn-wood-gold" data-navigate="home-screen">
+              <span>🏠 Return Home</span>
+            </button>
+            <button class="btn-gold btn-play-again">
+              <span>🔄 Play Again</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters (All, Correct, Incorrect) -->
+        <div class="review-filters-bar">
+          <span class="filter-label">Filter:</span>
+          <button class="review-filter-btn active" data-filter="all">All Questions</button>
+          <button class="review-filter-btn" data-filter="correct">✓ Correct Only</button>
+          <button class="review-filter-btn" data-filter="incorrect">✗ Incorrect Only</button>
+        </div>
+
+        <!-- Questions List Container -->
+        <div class="review-cards-list" id="review-cards-list">
+          <!-- Populated by ResultsManager -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SCREEN 6: PLAYER PROFILE DASHBOARD SCREEN                    -->
+    <!-- ============================================================ -->
+    <section id="dashboard-screen" class="app-screen hidden">
+      <div class="dashboard-container">
+        
+        <!-- Dashboard Header / Profile Card -->
+        <div class="player-profile-panel">
+          <div class="card-corner-filigree top-left"></div>
+          <div class="card-corner-filigree top-right"></div>
+          
+          <div class="profile-hero-content">
+            <!-- Avatar with Change Button -->
+            <div class="avatar-holder">
+              <div class="avatar-large" id="dashboard-profile-avatar-icon">👑</div>
+              <button class="btn-change-avatar" id="dashboard-avatar-picker-btn" title="Choose Avatar">
+                ✏️ Change
+              </button>
+            </div>
+
+            <!-- Player Details -->
+            <div class="profile-details">
+              <div class="player-name-row">
+                <input type="text" id="dashboard-player-name-input" class="player-name-input" maxlength="20" value="Quiz Explorer" title="Click to edit player name" spellcheck="false">
+                <span class="name-edit-hint">✎ Tap name to edit</span>
+              </div>
+              <div class="profile-badges-row">
+                <span class="rank-badge-pill" id="dashboard-rank-badge">🌱</span>
+                <span class="rank-name-text" id="dashboard-rank-title">Rookie</span>
+                <span class="level-badge-pill" id="dashboard-player-level">Level 1</span>
+              </div>
+              
+              <!-- XP Progression Bar -->
+              <div class="dashboard-xp-progress-block">
+                <div class="xp-labels-row">
+                  <span class="xp-current" id="dashboard-total-xp">0 XP</span>
+                  <span class="xp-target" id="dashboard-rank-progress-text">0 / 100 XP to next rank (0%)</span>
+                </div>
+                <div class="xp-progress-track">
+                  <div class="xp-progress-fill" id="dashboard-rank-progress-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Prominent Game Statistic Cards -->
+        <h3 class="dashboard-section-heading">👑 CAREER STATISTICS</h3>
+        <div class="stat-cards-quad">
+          
+          <!-- Card 1: Total Games Played -->
+          <div class="stat-quad-card">
+            <div class="card-glow"></div>
+            <span class="quad-icon">🎮</span>
+            <span class="quad-label">TOTAL GAMES PLAYED</span>
+            <span class="quad-value" id="stat-total-games">0</span>
+            <span class="quad-sub">All matches started</span>
+          </div>
+
+          <!-- Card 2: Total Questions Attempted -->
+          <div class="stat-quad-card card-attempted">
+            <div class="card-glow"></div>
+            <span class="quad-icon">🎯</span>
+            <span class="quad-label">QUESTIONS ATTEMPTED</span>
+            <span class="quad-value text-green" id="stat-total-attempted">0</span>
+            <span class="quad-sub">Cumulative answered</span>
+          </div>
+
+          <!-- Card 3: Total XP Earned -->
+          <div class="stat-quad-card card-xp">
+            <div class="card-glow"></div>
+            <span class="quad-icon">⚡</span>
+            <span class="quad-label">TOTAL XP EARNED</span>
+            <span class="quad-value text-gold" id="stat-total-xp-earned">0</span>
+            <span class="quad-sub">Knowledge experience</span>
+          </div>
+
+          <!-- Card 4: Total Lifelines Used -->
+          <div class="stat-quad-card card-lifelines">
+            <div class="card-glow"></div>
+            <span class="quad-icon">🛡️</span>
+            <span class="quad-label">LIFELINES USED</span>
+            <span class="quad-value" id="stat-total-lifelines">0</span>
+            <span class="quad-sub">50:50, Hint & 2nd Chance</span>
+          </div>
+
+        </div>
+
+        <!-- Secondary Performance Metrics Grid -->
+        <div class="secondary-metrics-grid">
+          <div class="sec-metric-item">
+            <span class="metric-icon">📈</span>
+            <span class="metric-title">Answer Accuracy</span>
+            <span class="metric-val" id="stat-accuracy-rate">0%</span>
+          </div>
+          <div class="sec-metric-item">
+            <span class="metric-icon">🔝</span>
+            <span class="metric-title">Highest Level Reached</span>
+            <span class="metric-val" id="stat-highest-level">-</span>
+          </div>
+          <div class="sec-metric-item">
+            <span class="metric-icon">✓</span>
+            <span class="metric-title">Total Correct Answers</span>
+            <span class="metric-val text-green" id="stat-total-correct">0</span>
+          </div>
+        </div>
+
+        <!-- Recent Games History Section -->
+        <div class="recent-history-section">
+          <div class="history-header-row">
+            <h3 class="dashboard-section-heading">📜 RECENT GAMES</h3>
+            <span class="history-sub-hint">Last 15 matches recorded</span>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Date & Time</th>
+                  <th>Mode</th>
+                  <th>Result</th>
+                  <th>Score</th>
+                  <th>Highest Question</th>
+                  <th>XP Gained</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Dashboard Footer Controls (Reset Stats & Return) -->
+        <div class="dashboard-footer-actions">
+          <button class="btn-wood-gold" data-navigate="home-screen">
+            <span>🏠 Return Home</span>
+          </button>
+          <button class="btn-gold" id="btn-dashboard-play">
+            <span>⚔️ Play Next Challenge</span>
+          </button>
+          <button class="btn-danger-outline" id="btn-reset-stats">
+            <span>⚠️ Reset All Statistics</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- MODALS                                                       -->
+  <!-- ============================================================ -->
+
+  <!-- Modal 1: How to Play -->
+  <div class="modal-overlay" id="modal-how-to-play" role="dialog" aria-modal="true" aria-labelledby="howtoplay-title">
+    <div class="royal-modal-card">
+      <div class="modal-header">
+        <h3 id="howtoplay-title" class="modal-title">👑 HOW TO PLAY QUIZMASTER</h3>
+        <button class="modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="rules-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>The 15 Mixed Question Gauntlet</strong>
+            <p>Every match presents 15 randomized questions spanning General Knowledge, Ramayana, Mahabharata, Sports, Science, History & Geography, Entertainment, and Technology.</p>
+          </div>
+        </div>
+
+        <div class="rules-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Progressive Difficulty & XP Rewards</strong>
+            <p>Questions advance as you climb: Q1-3 (Easy, 10 XP), Q4-6 (Medium, 20 XP), Q7-9 (Hard, 30 XP), Q10-12 (Very Hard, 40 XP), Q13-15 (Extreme, 50 XP). A 100 XP Victory bonus rewards flawless completion!</p>
+          </div>
+        </div>
+
+        <div class="rules-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>45-Second Timer per Question</strong>
+            <p>You have 45 seconds to confirm your answer. Warnings trigger at 15 seconds, and critical pulses at 5 seconds. If the timer hits zero, the match is lost!</p>
+          </div>
+        </div>
+
+        <div class="rules-step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <strong>The 3 Strategic Lifelines</strong>
+            <ul>
+              <li><strong>✂️ 50:50:</strong> Vanishes two incorrect options, leaving the correct one and one rival.</li>
+              <li><strong>💡 Brain Hint:</strong> Reveals a thoughtful clue to guide your deduction without spoiling the answer.</li>
+              <li><strong>🛡️ Second Chance:</strong> Protects you from one incorrect guess. If your first answer is wrong, the shield triggers and lets you pick again!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rules-step">
+          <div class="step-num">5</div>
+          <div class="step-text">
+            <strong>Locking Your Answer</strong>
+            <p>Select your desired option and press the golden "Lock Answer" button. A single wrong answer (without Second Chance) ends the match.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-gold modal-close-trigger">Understood, Let's Play!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Brain Hint -->
+  <div class="modal-overlay" id="modal-hint" role="dialog" aria-modal="true" aria-labelledby="hint-modal-title">
+    <div class="royal-modal-card hint-modal-box">
+      <div class="modal-header">
+        <h3 id="hint-modal-title" class="modal-title">💡 BRAIN HINT</h3>
+        <button class="modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body hint-content">
+        <span class="hint-topic-pill" id="hint-modal-category">TOPIC</span>
+        <div class="hint-quote-symbol">“</div>
+        <p class="hint-body-text" id="hint-modal-text">Analyzing question clue...</p>
+        <p class="hint-disclaimer">Lifeline consumed for this match. Consider your deduction carefully.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-gold modal-close-trigger">Back to Question</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Avatar Picker -->
+  <div class="modal-overlay" id="modal-avatar-picker" role="dialog" aria-modal="true" aria-labelledby="avatar-modal-title">
+    <div class="royal-modal-card">
+      <div class="modal-header">
+        <h3 id="avatar-modal-title" class="modal-title">👑 CHOOSE YOUR AVATAR</h3>
+        <button class="modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="avatar-selection-grid" id="avatar-picker-grid">
+          <!-- Populated by DashboardManager -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Reset Statistics Confirmation -->
+  <div class="modal-overlay" id="modal-reset-confirm" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
+    <div class="royal-modal-card reset-modal-box">
+      <div class="modal-header danger-header">
+        <h3 id="reset-modal-title" class="modal-title">⚠️ RESET ALL STATISTICS?</h3>
+        <button class="modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="reset-warning-text">
+          Are you sure you want to permanently clear your statistics, XP progress, level ranking, and match history?
+        </p>
+        <p class="text-crimson font-bold">This action is permanent and cannot be undone.</p>
+      </div>
+      <div class="modal-footer reset-footer">
+        <button class="btn-wood-gold" id="btn-cancel-reset">Cancel</button>
+        <button class="btn-danger-solid" id="btn-confirm-reset">Yes, Reset Everything</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/questions.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/sounds.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/lifelines.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/results.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
