@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuizMaster – The Ultimate Knowledge Challenge</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  
+
   <!-- Google Fonts: Cinzel for Royal Headers & Outfit for crisp game UI -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body class="royal-theme">
 
   <!-- Background Decorative Canvas & Patterns -->
@@ -37,7 +41,8 @@
       </div>
 
       <!-- Quick Player Profile / XP Status -->
-      <div class="header-player-pill" data-navigate="dashboard-screen" role="button" tabindex="0" title="Open Player Dashboard">
+      <div class="header-player-pill" data-navigate="dashboard-screen" role="button" tabindex="0"
+        title="Open Player Dashboard">
         <div class="header-avatar" id="header-avatar-icon">👑</div>
         <div class="header-info">
           <span class="header-name" id="header-player-name">Player</span>
@@ -70,16 +75,16 @@
     <!-- ============================================================ -->
     <section id="home-screen" class="app-screen active">
       <div class="home-container">
-        
+
         <!-- Royal Hero Banner -->
         <div class="hero-crest-badge">
           <div class="royal-crown-emblem">👑</div>
           <div class="royal-stars">★★★★★</div>
         </div>
-        
+
         <h2 class="hero-main-title">QUIZMASTER</h2>
         <p class="hero-tagline">Think Fast. Learn More. Beat the Challenge.</p>
-        
+
         <div class="gold-filigree-divider">
           <span class="filigree-diamond">◆</span>
         </div>
@@ -101,7 +106,7 @@
 
         <!-- Home Grid: Daily Challenge & Player Rank Card -->
         <div class="home-cards-grid">
-          
+
           <!-- Daily Challenge Section -->
           <div class="game-panel-card daily-challenge-card">
             <div class="card-corner-filigree top-left"></div>
@@ -165,13 +170,14 @@
     <!-- ============================================================ -->
     <section id="game-screen" class="app-screen hidden">
       <div class="game-container">
-        
+
         <!-- Top Game HUD -->
         <div class="game-hud-bar">
           <!-- Question Counter -->
           <div class="hud-item question-counter-pill">
             <span class="hud-label">QUESTION</span>
-            <span class="hud-value"><strong id="current-question-num">1</strong> / <span id="total-question-num">15</span></span>
+            <span class="hud-value"><strong id="current-question-num">1</strong> / <span
+                id="total-question-num">15</span></span>
           </div>
 
           <!-- Topic Badge -->
@@ -361,7 +367,7 @@
     <!-- ============================================================ -->
     <section id="victory-screen" class="app-screen hidden">
       <div class="victory-container">
-        
+
         <!-- Confetti container -->
         <div class="confetti-container" id="victory-confetti-container" aria-hidden="true"></div>
 
@@ -435,7 +441,7 @@
     <!-- ============================================================ -->
     <section id="review-screen" class="app-screen hidden">
       <div class="review-container">
-        
+
         <div class="review-header-bar">
           <div>
             <h2 class="review-title">Match Review & Insights</h2>
@@ -472,12 +478,12 @@
     <!-- ============================================================ -->
     <section id="dashboard-screen" class="app-screen hidden">
       <div class="dashboard-container">
-        
+
         <!-- Dashboard Header / Profile Card -->
         <div class="player-profile-panel">
           <div class="card-corner-filigree top-left"></div>
           <div class="card-corner-filigree top-right"></div>
-          
+
           <div class="profile-hero-content">
             <!-- Avatar with Change Button -->
             <div class="avatar-holder">
@@ -490,7 +496,8 @@
             <!-- Player Details -->
             <div class="profile-details">
               <div class="player-name-row">
-                <input type="text" id="dashboard-player-name-input" class="player-name-input" maxlength="20" value="Quiz Explorer" title="Click to edit player name" spellcheck="false">
+                <input type="text" id="dashboard-player-name-input" class="player-name-input" maxlength="20"
+                  value="Quiz Explorer" title="Click to edit player name" spellcheck="false">
                 <span class="name-edit-hint">✎ Tap name to edit</span>
               </div>
               <div class="profile-badges-row">
@@ -498,7 +505,7 @@
                 <span class="rank-name-text" id="dashboard-rank-title">Rookie</span>
                 <span class="level-badge-pill" id="dashboard-player-level">Level 1</span>
               </div>
-              
+
               <!-- XP Progression Bar -->
               <div class="dashboard-xp-progress-block">
                 <div class="xp-labels-row">
@@ -516,7 +523,7 @@
         <!-- 4 Prominent Game Statistic Cards -->
         <h3 class="dashboard-section-heading">👑 CAREER STATISTICS</h3>
         <div class="stat-cards-quad">
-          
+
           <!-- Card 1: Total Games Played -->
           <div class="stat-quad-card">
             <div class="card-glow"></div>
@@ -526,94 +533,94 @@
             <span class="quad-sub">All matches started</span>
           </div>
 
-          <!-- Card 2: Total Questions Attempted -->
-          <div class="stat-quad-card card-attempted">
-            <div class="card-glow"></div>
-            <span class="quad-icon">🎯</span>
-            <span class="quad-label">QUESTIONS ATTEMPTED</span>
-            <span class="quad-value text-green" id="stat-total-attempted">0</span>
-            <span class="quad-sub">Cumulative answered</span>
+            <!-- Card 2: Total Questions Attempted -->
+            <div class="stat-quad-card card-attempted">
+              <div class="card-glow"></div>
+              <span class="quad-icon">🎯</span>
+              <span class="quad-label">QUESTIONS ATTEMPTED</span>
+              <span class="quad-value text-green" id="stat-total-attempted">0</span>
+              <span class="quad-sub">Cumulative answered</span>
+            </div>
+
+            <!-- Card 3: Total XP Earned -->
+            <div class="stat-quad-card card-xp">
+              <div class="card-glow"></div>
+              <span class="quad-icon">⚡</span>
+              <span class="quad-label">TOTAL XP EARNED</span>
+              <span class="quad-value text-gold" id="stat-total-xp-earned">0</span>
+              <span class="quad-sub">Knowledge experience</span>
+            </div>
+
+            <!-- Card 4: Total Lifelines Used -->
+            <div class="stat-quad-card card-lifelines">
+              <div class="card-glow"></div>
+              <span class="quad-icon">🛡️</span>
+              <span class="quad-label">LIFELINES USED</span>
+              <span class="quad-value" id="stat-total-lifelines">0</span>
+              <span class="quad-sub">50:50, Hint & 2nd Chance</span>
+            </div>
+
           </div>
 
-          <!-- Card 3: Total XP Earned -->
-          <div class="stat-quad-card card-xp">
-            <div class="card-glow"></div>
-            <span class="quad-icon">⚡</span>
-            <span class="quad-label">TOTAL XP EARNED</span>
-            <span class="quad-value text-gold" id="stat-total-xp-earned">0</span>
-            <span class="quad-sub">Knowledge experience</span>
+          <!-- Secondary Performance Metrics Grid -->
+          <div class="secondary-metrics-grid">
+            <div class="sec-metric-item">
+              <span class="metric-icon">📈</span>
+              <span class="metric-title">Answer Accuracy</span>
+              <span class="metric-val" id="stat-accuracy-rate">0%</span>
+            </div>
+            <div class="sec-metric-item">
+              <span class="metric-icon">🔝</span>
+              <span class="metric-title">Highest Level Reached</span>
+              <span class="metric-val" id="stat-highest-level">-</span>
+            </div>
+            <div class="sec-metric-item">
+              <span class="metric-icon">✓</span>
+              <span class="metric-title">Total Correct Answers</span>
+              <span class="metric-val text-green" id="stat-total-correct">0</span>
+            </div>
           </div>
 
-          <!-- Card 4: Total Lifelines Used -->
-          <div class="stat-quad-card card-lifelines">
-            <div class="card-glow"></div>
-            <span class="quad-icon">🛡️</span>
-            <span class="quad-label">LIFELINES USED</span>
-            <span class="quad-value" id="stat-total-lifelines">0</span>
-            <span class="quad-sub">50:50, Hint & 2nd Chance</span>
+          <!-- Recent Games History Section -->
+          <div class="recent-history-section">
+            <div class="history-header-row">
+              <h3 class="dashboard-section-heading">📜 RECENT GAMES</h3>
+              <span class="history-sub-hint">Last 15 matches recorded</span>
+            </div>
+
+            <div class="table-responsive-wrapper">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>Mode</th>
+                    <th>Result</th>
+                    <th>Score</th>
+                    <th>Highest Question</th>
+                    <th>XP Gained</th>
+                  </tr>
+                </thead>
+                <tbody id="history-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Dashboard Footer Controls (Reset Stats & Return) -->
+          <div class="dashboard-footer-actions">
+            <button class="btn-wood-gold" data-navigate="home-screen">
+              <span>🏠 Return Home</span>
+            </button>
+            <button class="btn-gold" id="btn-dashboard-play">
+              <span>⚔️ Play Next Challenge</span>
+            </button>
+            <button class="btn-danger-outline" id="btn-reset-stats">
+              <span>⚠️ Reset All Statistics</span>
+            </button>
           </div>
 
         </div>
-
-        <!-- Secondary Performance Metrics Grid -->
-        <div class="secondary-metrics-grid">
-          <div class="sec-metric-item">
-            <span class="metric-icon">📈</span>
-            <span class="metric-title">Answer Accuracy</span>
-            <span class="metric-val" id="stat-accuracy-rate">0%</span>
-          </div>
-          <div class="sec-metric-item">
-            <span class="metric-icon">🔝</span>
-            <span class="metric-title">Highest Level Reached</span>
-            <span class="metric-val" id="stat-highest-level">-</span>
-          </div>
-          <div class="sec-metric-item">
-            <span class="metric-icon">✓</span>
-            <span class="metric-title">Total Correct Answers</span>
-            <span class="metric-val text-green" id="stat-total-correct">0</span>
-          </div>
-        </div>
-
-        <!-- Recent Games History Section -->
-        <div class="recent-history-section">
-          <div class="history-header-row">
-            <h3 class="dashboard-section-heading">📜 RECENT GAMES</h3>
-            <span class="history-sub-hint">Last 15 matches recorded</span>
-          </div>
-
-          <div class="table-responsive-wrapper">
-            <table class="history-table">
-              <thead>
-                <tr>
-                  <th>Date & Time</th>
-                  <th>Mode</th>
-                  <th>Result</th>
-                  <th>Score</th>
-                  <th>Highest Question</th>
-                  <th>XP Gained</th>
-                </tr>
-              </thead>
-              <tbody id="history-table-body">
-                <!-- Dynamically populated -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Dashboard Footer Controls (Reset Stats & Return) -->
-        <div class="dashboard-footer-actions">
-          <button class="btn-wood-gold" data-navigate="home-screen">
-            <span>🏠 Return Home</span>
-          </button>
-          <button class="btn-gold" id="btn-dashboard-play">
-            <span>⚔️ Play Next Challenge</span>
-          </button>
-          <button class="btn-danger-outline" id="btn-reset-stats">
-            <span>⚠️ Reset All Statistics</span>
-          </button>
-        </div>
-
-      </div>
     </section>
 
   </main>
@@ -634,7 +641,8 @@
           <div class="step-num">1</div>
           <div class="step-text">
             <strong>The 15 Mixed Question Gauntlet</strong>
-            <p>Every match presents 15 randomized questions spanning General Knowledge, Ramayana, Mahabharata, Sports, Science, History & Geography, Entertainment, and Technology.</p>
+            <p>Every match presents 15 randomized questions spanning General Knowledge, Ramayana, Mahabharata, Sports,
+              Science, History & Geography, Entertainment, and Technology.</p>
           </div>
         </div>
 
@@ -642,7 +650,8 @@
           <div class="step-num">2</div>
           <div class="step-text">
             <strong>Progressive Difficulty & XP Rewards</strong>
-            <p>Questions advance as you climb: Q1-3 (Easy, 10 XP), Q4-6 (Medium, 20 XP), Q7-9 (Hard, 30 XP), Q10-12 (Very Hard, 40 XP), Q13-15 (Extreme, 50 XP). A 100 XP Victory bonus rewards flawless completion!</p>
+            <p>Questions advance as you climb: Q1-3 (Easy, 10 XP), Q4-6 (Medium, 20 XP), Q7-9 (Hard, 30 XP), Q10-12
+              (Very Hard, 40 XP), Q13-15 (Extreme, 50 XP). A 100 XP Victory bonus rewards flawless completion!</p>
           </div>
         </div>
 
@@ -650,7 +659,8 @@
           <div class="step-num">3</div>
           <div class="step-text">
             <strong>45-Second Timer per Question</strong>
-            <p>You have 45 seconds to confirm your answer. Warnings trigger at 15 seconds, and critical pulses at 5 seconds. If the timer hits zero, the match is lost!</p>
+            <p>You have 45 seconds to confirm your answer. Warnings trigger at 15 seconds, and critical pulses at 5
+              seconds. If the timer hits zero, the match is lost!</p>
           </div>
         </div>
 
@@ -660,8 +670,10 @@
             <strong>The 3 Strategic Lifelines</strong>
             <ul>
               <li><strong>✂️ 50:50:</strong> Vanishes two incorrect options, leaving the correct one and one rival.</li>
-              <li><strong>💡 Brain Hint:</strong> Reveals a thoughtful clue to guide your deduction without spoiling the answer.</li>
-              <li><strong>🛡️ Second Chance:</strong> Protects you from one incorrect guess. If your first answer is wrong, the shield triggers and lets you pick again!</li>
+              <li><strong>💡 Brain Hint:</strong> Reveals a thoughtful clue to guide your deduction without spoiling the
+                answer.</li>
+              <li><strong>🛡️ Second Chance:</strong> Protects you from one incorrect guess. If your first answer is
+                wrong, the shield triggers and lets you pick again!</li>
             </ul>
           </div>
         </div>
@@ -670,7 +682,8 @@
           <div class="step-num">5</div>
           <div class="step-text">
             <strong>Locking Your Answer</strong>
-            <p>Select your desired option and press the golden "Lock Answer" button. A single wrong answer (without Second Chance) ends the match.</p>
+            <p>Select your desired option and press the golden "Lock Answer" button. A single wrong answer (without
+              Second Chance) ends the match.</p>
           </div>
         </div>
       </div>
@@ -700,7 +713,8 @@
   </div>
 
   <!-- Modal 3: Avatar Picker -->
-  <div class="modal-overlay" id="modal-avatar-picker" role="dialog" aria-modal="true" aria-labelledby="avatar-modal-title">
+  <div class="modal-overlay" id="modal-avatar-picker" role="dialog" aria-modal="true"
+    aria-labelledby="avatar-modal-title">
     <div class="royal-modal-card">
       <div class="modal-header">
         <h3 id="avatar-modal-title" class="modal-title">👑 CHOOSE YOUR AVATAR</h3>
@@ -715,7 +729,8 @@
   </div>
 
   <!-- Modal 4: Reset Statistics Confirmation -->
-  <div class="modal-overlay" id="modal-reset-confirm" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
+  <div class="modal-overlay" id="modal-reset-confirm" role="dialog" aria-modal="true"
+    aria-labelledby="reset-modal-title">
     <div class="royal-modal-card reset-modal-box">
       <div class="modal-header danger-header">
         <h3 id="reset-modal-title" class="modal-title">⚠️ RESET ALL STATISTICS?</h3>
@@ -746,4 +761,5 @@
   <script src="js/app.js"></script>
 
 </body>
+
 </html>
