@@ -533,94 +533,94 @@
             <span class="quad-sub">All matches started</span>
           </div>
 
-            <!-- Card 2: Total Questions Attempted -->
-            <div class="stat-quad-card card-attempted">
-              <div class="card-glow"></div>
-              <span class="quad-icon">🎯</span>
-              <span class="quad-label">QUESTIONS ATTEMPTED</span>
-              <span class="quad-value text-green" id="stat-total-attempted">0</span>
-              <span class="quad-sub">Cumulative answered</span>
-            </div>
-
-            <!-- Card 3: Total XP Earned -->
-            <div class="stat-quad-card card-xp">
-              <div class="card-glow"></div>
-              <span class="quad-icon">⚡</span>
-              <span class="quad-label">TOTAL XP EARNED</span>
-              <span class="quad-value text-gold" id="stat-total-xp-earned">0</span>
-              <span class="quad-sub">Knowledge experience</span>
-            </div>
-
-            <!-- Card 4: Total Lifelines Used -->
-            <div class="stat-quad-card card-lifelines">
-              <div class="card-glow"></div>
-              <span class="quad-icon">🛡️</span>
-              <span class="quad-label">LIFELINES USED</span>
-              <span class="quad-value" id="stat-total-lifelines">0</span>
-              <span class="quad-sub">50:50, Hint & 2nd Chance</span>
-            </div>
-
+          <!-- Card 2: Total Questions Attempted -->
+          <div class="stat-quad-card card-attempted">
+            <div class="card-glow"></div>
+            <span class="quad-icon">🎯</span>
+            <span class="quad-label">QUESTIONS ATTEMPTED</span>
+            <span class="quad-value text-green" id="stat-total-attempted">0</span>
+            <span class="quad-sub">Cumulative answered</span>
           </div>
 
-          <!-- Secondary Performance Metrics Grid -->
-          <div class="secondary-metrics-grid">
-            <div class="sec-metric-item">
-              <span class="metric-icon">📈</span>
-              <span class="metric-title">Answer Accuracy</span>
-              <span class="metric-val" id="stat-accuracy-rate">0%</span>
-            </div>
-            <div class="sec-metric-item">
-              <span class="metric-icon">🔝</span>
-              <span class="metric-title">Highest Level Reached</span>
-              <span class="metric-val" id="stat-highest-level">-</span>
-            </div>
-            <div class="sec-metric-item">
-              <span class="metric-icon">✓</span>
-              <span class="metric-title">Total Correct Answers</span>
-              <span class="metric-val text-green" id="stat-total-correct">0</span>
-            </div>
+          <!-- Card 3: Total XP Earned -->
+          <div class="stat-quad-card card-xp">
+            <div class="card-glow"></div>
+            <span class="quad-icon">⚡</span>
+            <span class="quad-label">TOTAL XP EARNED</span>
+            <span class="quad-value text-gold" id="stat-total-xp-earned">0</span>
+            <span class="quad-sub">Knowledge experience</span>
           </div>
 
-          <!-- Recent Games History Section -->
-          <div class="recent-history-section">
-            <div class="history-header-row">
-              <h3 class="dashboard-section-heading">📜 RECENT GAMES</h3>
-              <span class="history-sub-hint">Last 15 matches recorded</span>
-            </div>
-
-            <div class="table-responsive-wrapper">
-              <table class="history-table">
-                <thead>
-                  <tr>
-                    <th>Date & Time</th>
-                    <th>Mode</th>
-                    <th>Result</th>
-                    <th>Score</th>
-                    <th>Highest Question</th>
-                    <th>XP Gained</th>
-                  </tr>
-                </thead>
-                <tbody id="history-table-body">
-                  <!-- Dynamically populated -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Dashboard Footer Controls (Reset Stats & Return) -->
-          <div class="dashboard-footer-actions">
-            <button class="btn-wood-gold" data-navigate="home-screen">
-              <span>🏠 Return Home</span>
-            </button>
-            <button class="btn-gold" id="btn-dashboard-play">
-              <span>⚔️ Play Next Challenge</span>
-            </button>
-            <button class="btn-danger-outline" id="btn-reset-stats">
-              <span>⚠️ Reset All Statistics</span>
-            </button>
+          <!-- Card 4: Total Lifelines Used -->
+          <div class="stat-quad-card card-lifelines">
+            <div class="card-glow"></div>
+            <span class="quad-icon">🛡️</span>
+            <span class="quad-label">LIFELINES USED</span>
+            <span class="quad-value" id="stat-total-lifelines">0</span>
+            <span class="quad-sub">50:50, Hint & 2nd Chance</span>
           </div>
 
         </div>
+
+        <!-- Secondary Performance Metrics Grid -->
+        <div class="secondary-metrics-grid">
+          <div class="sec-metric-item">
+            <span class="metric-icon">📈</span>
+            <span class="metric-title">Answer Accuracy</span>
+            <span class="metric-val" id="stat-accuracy-rate">0%</span>
+          </div>
+          <div class="sec-metric-item">
+            <span class="metric-icon">🔝</span>
+            <span class="metric-title">Highest Level Reached</span>
+            <span class="metric-val" id="stat-highest-level">-</span>
+          </div>
+          <div class="sec-metric-item">
+            <span class="metric-icon">✓</span>
+            <span class="metric-title">Total Correct Answers</span>
+            <span class="metric-val text-green" id="stat-total-correct">0</span>
+          </div>
+        </div>
+
+        <!-- Recent Games History Section -->
+        <div class="recent-history-section">
+          <div class="history-header-row">
+            <h3 class="dashboard-section-heading">📜 RECENT GAMES</h3>
+            <span class="history-sub-hint">Last 15 matches recorded</span>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Date & Time</th>
+                  <th>Mode</th>
+                  <th>Result</th>
+                  <th>Score</th>
+                  <th>Highest Question</th>
+                  <th>XP Gained</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Dashboard Footer Controls (Reset Stats & Return) -->
+        <div class="dashboard-footer-actions">
+          <button class="btn-wood-gold" data-navigate="home-screen">
+            <span>🏠 Return Home</span>
+          </button>
+          <button class="btn-gold" id="btn-dashboard-play">
+            <span>⚔️ Play Next Challenge</span>
+          </button>
+          <button class="btn-danger-outline" id="btn-reset-stats">
+            <span>⚠️ Reset All Statistics</span>
+          </button>
+        </div>
+
+      </div>
     </section>
 
   </main>

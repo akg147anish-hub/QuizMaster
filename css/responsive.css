@@ -1,24 +1,25 @@
 /* ==========================================================================
    QUIZMASTER – RESPONSIVE DESIGN STYLESHEET
-   Flawless layout across Desktop, Laptop, Tablet, and Mobile devices
+   Flawless layout across Desktop, Laptop, Tablet, and Mobile devices (320px - 414px+)
+   Preserves Royal Emerald Green & Gold gaming theme, desktop styling, and functionality
    ========================================================================== */
 
 /* ------------------------------------------------------------
-   TABLETS & MEDIUM SCREENS (<= 992px)
+   1. LAPTOPS & TABLETS (<= 992px)
    ------------------------------------------------------------ */
 @media screen and (max-width: 992px) {
   .hero-main-title {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
 
   .stat-cards-quad {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 14px;
   }
 
   .secondary-metrics-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
 
   .sec-metric-item:nth-child(3) {
@@ -32,6 +33,7 @@
   .profile-hero-content {
     flex-direction: column;
     text-align: center;
+    gap: 18px;
   }
 
   .player-name-row {
@@ -44,148 +46,45 @@
 
   .results-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
 /* ------------------------------------------------------------
-   MOBILE LANDSCAPE & COMPACT TABLETS (<= 768px)
+   2. MOBILE LANDSCAPE & COMPACT TABLETS (<= 768px)
    ------------------------------------------------------------ */
 @media screen and (max-width: 768px) {
-  .header-container {
-    padding: 0 14px;
-    gap: 10px;
-  }
-
-  .brand-title {
-    font-size: 1.2rem;
-  }
-
-  .brand-subtitle {
-    display: none;
-  }
-
-  .header-name {
-    display: none;
-  }
-
-  .header-rank {
-    display: none;
-  }
-
-  .btn-header-nav .nav-text,
-  .btn-sound-toggle .sound-text {
-    display: none;
-  }
-
-  .btn-header-nav,
-  .btn-sound-toggle {
-    padding: 8px 10px;
-  }
-
-  /* Home */
-  .hero-main-title {
-    font-size: 2.1rem;
-  }
-
-  .hero-tagline {
-    font-size: 1.05rem;
-  }
-
-  .home-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Arena & Game HUD */
-  .game-hud-bar {
-    justify-content: space-between;
-    padding: 6px 12px;
-  }
-
-  .arena-top-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .lifelines-deck {
-    gap: 12px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .lifeline-coin {
-    width: 48px;
-    height: 48px;
-  }
-
-  .lifeline-text {
-    font-size: 0.65rem;
-  }
-
-  .options-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .option-btn {
-    min-height: 56px;
-    padding: 12px 16px;
-    font-size: 1rem;
-  }
-
-  .question-text {
-    font-size: 1.15rem;
-  }
-
-  .fatal-answers-comparison {
-    grid-template-columns: 1fr;
-  }
-
-  .review-options-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .review-filters-bar {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .review-header-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .avatar-selection-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .dashboard-footer-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .dashboard-footer-actions button {
-    width: 100%;
-  }
-
-  .results-actions-row {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .results-actions-row button {
-    width: 100%;
-  }
-}
-
-/* ------------------------------------------------------------
-   SMALL MOBILE PHONES (<= 480px)
-   ------------------------------------------------------------ */
-@media screen and (max-width: 480px) {
+  /* Main Container */
   .main-viewport {
-    padding: 16px 10px 50px;
+    padding: 16px 12px 50px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .home-container,
+  .dashboard-container,
+  .game-container,
+  .review-container,
+  .gameover-container,
+  .victory-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Header Responsiveness */
+  .header-container {
+    padding: 0 12px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .brand-crest {
+    gap: 8px;
+    flex-shrink: 0;
+    min-width: 0;
   }
 
   .crest-shield {
@@ -197,12 +96,98 @@
     font-size: 18px;
   }
 
+  .brand-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .header-player-pill {
+    padding: 3px 10px 3px 4px;
+    gap: 8px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .header-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .header-name {
+    display: none;
+  }
+
+  .header-rank {
+    display: none;
+  }
+
+  .header-meta {
+    gap: 0;
+  }
+
+  .header-xp-badge {
+    font-size: 0.72rem;
+    padding: 2px 7px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .btn-header-nav .nav-text,
+  .btn-sound-toggle .sound-text {
+    display: none;
+  }
+
+  .btn-header-nav,
+  .btn-sound-toggle {
+    padding: 7px 10px;
+    gap: 0;
+    border-radius: var(--radius-pill);
+  }
+
+  /* Home Screen */
+  .hero-crest-badge .royal-crown-emblem {
+    font-size: 44px;
+  }
+
   .hero-main-title {
-    font-size: 1.75rem;
+    font-size: 2.1rem;
+    letter-spacing: 1.5px;
   }
 
   .hero-tagline {
-    font-size: 0.92rem;
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .gold-filigree-divider {
+    width: 180px;
+    margin: 0 auto 22px;
+  }
+
+  .home-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .game-panel-card {
+    padding: 20px 16px;
+  }
+
+  .btn-royal-play {
+    width: 100%;
+    max-width: 100%;
   }
 
   .btn-play-inner {
@@ -210,69 +195,1244 @@
   }
 
   .play-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  .play-subtitle {
+  .home-secondary-actions {
+    width: 100%;
+  }
+
+  .btn-wood-gold {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Player Profile Card */
+  .player-profile-panel {
+    padding: 22px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .profile-hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .avatar-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .avatar-large {
+    width: 78px;
+    height: 78px;
+    font-size: 40px;
+  }
+
+  .btn-change-avatar {
+    padding: 4px 12px;
+    font-size: 0.72rem;
+  }
+
+  .profile-details {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .player-name-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .player-name-input {
+    font-size: 1.4rem;
+    max-width: 260px;
+    width: 100%;
+    text-align: center;
+    padding: 3px 6px;
+    border-bottom: 1.5px dashed var(--gold-border);
+  }
+
+  .name-edit-hint {
+    font-size: 0.7rem;
+    color: var(--gold-muted);
+  }
+
+  .profile-badges-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .rank-badge-pill {
+    font-size: 1.1rem;
+  }
+
+  .rank-name-text {
+    font-size: 1rem;
+  }
+
+  .level-badge-pill {
+    font-size: 0.75rem;
+    padding: 2px 9px;
+  }
+
+  .dashboard-xp-progress-block {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .xp-labels-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .xp-current {
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .xp-target {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .xp-progress-track {
+    width: 100%;
+    height: 8px;
+    margin-bottom: 0;
+  }
+
+  /* Career Statistics: 2 Columns on Suitable Mobile */
+  .stat-cards-quad {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .stat-quad-card {
+    padding: 14px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .quad-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .quad-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .quad-value {
+    font-size: 1.65rem;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+
+  .quad-sub {
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .secondary-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 12px 8px;
+    margin-bottom: 24px;
+  }
+
+  .sec-metric-item {
+    padding: 4px 2px;
+  }
+
+  .metric-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .metric-title {
+    font-size: 0.65rem;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .metric-val {
+    font-size: 1.1rem;
+  }
+
+  /* Recent Games Table & Actions */
+  .recent-history-section {
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .history-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .table-responsive-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+  }
+
+  .history-table {
+    min-width: 540px;
+    width: 100%;
+  }
+
+  .dashboard-footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .dashboard-footer-actions button {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* Quiz Screen & HUD */
+  .game-hud-bar {
+    padding: 6px 12px;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .game-arena-card {
+    padding: 20px 16px;
+    border-width: 2px;
+  }
+
+  .arena-top-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .lifelines-deck {
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .lifeline-coin {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lifeline-icon {
+    font-size: 22px;
+  }
+
+  .lifeline-text {
+    font-size: 0.65rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+    width: 100%;
+  }
+
+  .option-btn {
+    min-height: 52px;
+    padding: 12px 16px;
+    font-size: 0.98rem;
+    width: 100%;
+  }
+
+  .question-text {
+    font-size: 1.15rem;
+  }
+
+  .game-action-bar {
+    width: 100%;
+  }
+
+  .btn-royal-lock,
+  .primary-action-btn,
+  .btn-crimson {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 1rem;
+  }
+
+  /* Result Screens */
+  .result-banner {
+    padding: 20px 14px 16px;
+  }
+
+  .result-heading {
+    font-size: 2.2rem;
+  }
+
+  .victory-heading {
+    font-size: 2.3rem;
+  }
+
+  .results-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .fatal-answers-comparison {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .achievement-unlocked-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 16px 14px;
+  }
+
+  .results-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .results-actions-row button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  /* Answer Review Screen */
+  .review-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .review-nav-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .review-nav-actions button {
+    flex: 1;
+    justify-content: center;
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .review-filters-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .review-options-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .recap-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .recap-label {
+    min-width: auto;
     font-size: 0.75rem;
   }
 
+  /* Modals */
+  .avatar-selection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------------------
+   3. STANDARD MOBILE PHONES (<= 480px - covers 414px, 390px, 375px, 360px)
+   ------------------------------------------------------------ */
+@media screen and (max-width: 480px) {
+  .main-viewport {
+    padding: 12px 8px 40px;
+  }
+
+  /* Header Fit on Standard Mobile */
+  .header-container {
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .brand-crest {
+    gap: 6px;
+  }
+
+  .crest-shield {
+    width: 32px;
+    height: 36px;
+  }
+
+  .crest-icon {
+    font-size: 16px;
+  }
+
+  .brand-title {
+    font-size: 1.02rem;
+    letter-spacing: 0.3px;
+  }
+
+  .header-player-pill {
+    padding: 2px 7px 2px 3px;
+    gap: 5px;
+  }
+
+  .header-avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+
+  .header-xp-badge {
+    font-size: 0.68rem;
+    padding: 1px 6px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .btn-sound-toggle,
+  .btn-header-nav {
+    padding: 6px 7px;
+  }
+
+  .btn-sound-toggle .sound-icon,
+  .btn-header-nav .nav-icon {
+    font-size: 14px;
+  }
+
+  /* Home Screen */
+  .hero-crest-badge .royal-crown-emblem {
+    font-size: 38px;
+  }
+
+  .hero-main-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .hero-tagline {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+  }
+
+  .gold-filigree-divider {
+    width: 140px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-cta-area {
+    margin-bottom: 20px;
+  }
+
+  .btn-play-inner {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .play-icon {
+    font-size: 24px;
+  }
+
+  .play-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .play-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .play-arrow {
+    font-size: 18px;
+  }
+
+  .home-cards-grid {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .game-panel-card {
+    padding: 16px 12px;
+  }
+
+  .panel-header {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .panel-icon-wrap {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .panel-title {
+    font-size: 1.1rem;
+  }
+
+  .panel-desc {
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+  }
+
+  .btn-gold-pulse,
+  .btn-gold-outline {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .btn-wood-gold {
+    padding: 9px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Player Profile Card */
+  .player-profile-panel {
+    padding: 16px 12px;
+    margin-bottom: 20px;
+  }
+
+  .avatar-large {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
+
+  .btn-change-avatar {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+  }
+
+  .player-name-row {
+    margin-bottom: 6px;
+  }
+
+  .player-name-input {
+    font-size: 1.25rem;
+    max-width: 220px;
+    padding: 2px 4px;
+  }
+
+  .name-edit-hint {
+    font-size: 0.65rem;
+  }
+
+  .profile-badges-row {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .rank-badge-pill {
+    font-size: 1rem;
+  }
+
+  .rank-name-text {
+    font-size: 0.95rem;
+  }
+
+  .level-badge-pill {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
+
+  .xp-labels-row {
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  .xp-current {
+    font-size: 0.82rem;
+  }
+
+  .xp-target {
+    font-size: 0.68rem;
+  }
+
+  .xp-progress-track {
+    height: 7px;
+  }
+
+  /* Career Statistics: 2 Columns on Mobile */
+  .dashboard-section-heading {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .stat-cards-quad {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .stat-quad-card {
+    padding: 12px 8px;
+  }
+
+  .quad-icon {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .quad-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.4px;
+    margin-bottom: 2px;
+  }
+
+  .quad-value {
+    font-size: 1.45rem;
+    margin-bottom: 2px;
+  }
+
+  .quad-sub {
+    font-size: 0.62rem;
+  }
+
+  .secondary-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 10px 4px;
+    margin-bottom: 20px;
+  }
+
+  .sec-metric-item {
+    padding: 4px 1px;
+  }
+
+  .metric-icon {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .metric-title {
+    font-size: 0.58rem;
+    margin-bottom: 2px;
+  }
+
+  .metric-val {
+    font-size: 0.95rem;
+  }
+
+  /* Recent Games Table */
+  .recent-history-section {
+    padding: 14px 10px;
+    margin-bottom: 20px;
+  }
+
+  .history-sub-hint {
+    font-size: 0.68rem;
+  }
+
+  .history-table th {
+    padding: 8px 6px;
+    font-size: 0.68rem;
+  }
+
+  .history-table td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+
+  /* Quiz Screen */
+  .game-hud-bar {
+    padding: 5px 8px;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .question-counter-pill {
+    font-size: 0.68rem;
+  }
+
+  .question-counter-pill strong {
+    font-size: 0.95rem;
+  }
+
+  .topic-pill-badge {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    letter-spacing: 0.5px;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .difficulty-pill {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  .xp-reward-pill {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .btn-hud-quit {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .game-arena-card {
+    padding: 14px 10px;
+  }
+
+  .arena-top-row {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .timer-widget {
+    width: 64px;
+    height: 64px;
+  }
+
+  .timer-number {
+    font-size: 1.4rem;
+  }
+
+  .timer-unit {
+    font-size: 0.5rem;
+  }
+
+  .untimed-badge {
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .untimed-icon-wrap {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .untimed-title {
+    font-size: 0.78rem;
+  }
+
+  .untimed-sub {
+    font-size: 0.6rem;
+  }
+
+  .lifelines-deck {
+    gap: 10px;
+  }
+
+  .lifeline-coin {
+    width: 42px;
+    height: 42px;
+  }
+
+  .lifeline-icon {
+    font-size: 18px;
+  }
+
+  .lifeline-text {
+    font-size: 0.6rem;
+  }
+
+  .lifeline-status {
+    font-size: 0.5rem;
+  }
+
+  .question-prompt-box {
+    padding: 12px 10px;
+    min-height: 64px;
+    margin-bottom: 12px;
+  }
+
+  .question-text {
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .options-grid {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .option-btn {
+    padding: 10px 12px;
+    min-height: 48px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .option-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.78rem;
+  }
+
+  .option-text {
+    font-size: 0.88rem;
+  }
+
+  .option-state-icon {
+    font-size: 1rem;
+    min-width: 18px;
+  }
+
+  .explanation-card {
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+
+  .expl-status-pill {
+    font-size: 0.72rem;
+  }
+
+  .expl-xp-reward {
+    font-size: 0.75rem;
+  }
+
+  .explanation-text {
+    font-size: 0.85rem;
+  }
+
+  .shield-notice {
+    gap: 10px;
+  }
+
+  .shield-icon {
+    font-size: 24px;
+  }
+
+  .shield-text strong {
+    font-size: 0.85rem;
+  }
+
+  .shield-text p {
+    font-size: 0.78rem;
+  }
+
+  .btn-royal-lock,
+  .primary-action-btn,
+  .btn-crimson {
+    padding: 11px 18px;
+    font-size: 0.92rem;
+  }
+
+  /* Results Screen */
+  .result-icon-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .victory-crown-trophy {
+    font-size: 44px;
+    margin-bottom: 4px;
+  }
+
+  .result-heading {
+    font-size: 1.8rem;
+  }
+
+  .victory-heading {
+    font-size: 1.9rem;
+  }
+
+  .result-sub-heading,
+  .victory-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .results-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .res-stat-card {
+    padding: 10px 6px;
+  }
+
+  .res-stat-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .res-stat-label {
+    font-size: 0.62rem;
+  }
+
+  .res-stat-value {
+    font-size: 1.35rem;
+  }
+
+  .fatal-question-wrapper {
+    padding: 12px 10px;
+    margin-bottom: 16px;
+  }
+
+  .fatal-q-text {
+    font-size: 0.9rem;
+  }
+
+  .box-label {
+    font-size: 0.65rem;
+  }
+
+  .box-value {
+    font-size: 0.82rem;
+  }
+
+  .fatal-explanation {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .achievement-unlocked-card {
+    padding: 12px 10px;
+    margin-bottom: 16px;
+  }
+
+  .achieve-icon {
+    font-size: 28px;
+  }
+
+  .achieve-title {
+    font-size: 1rem;
+  }
+
+  .achieve-desc {
+    font-size: 0.78rem;
+  }
+
+  .results-actions-row {
+    gap: 8px;
+  }
+
+  .results-actions-row button {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Answer Review */
+  .review-title {
+    font-size: 1.35rem;
+  }
+
+  .review-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .review-item-card {
+    padding: 12px 10px;
+  }
+
+  .review-q-text {
+    font-size: 0.9rem;
+  }
+
+  .review-option-pill {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
+
+  .review-answers-recap {
+    padding: 6px 8px;
+  }
+
+  .recap-row {
+    font-size: 0.78rem;
+  }
+
+  .review-explanation-box {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
+
+  /* Modals */
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal-header {
+    padding: 10px 12px;
+  }
+
+  .modal-title {
+    font-size: 0.95rem;
+  }
+
+  .modal-body {
+    padding: 12px 10px;
+  }
+
+  .modal-footer {
+    padding: 8px 12px;
+  }
+
+  .avatar-selection-grid {
+    gap: 6px;
+  }
+
+  .avatar-option-card {
+    padding: 8px 4px;
+  }
+
+  .avatar-big-icon {
+    font-size: 26px;
+  }
+
+  .avatar-card-label {
+    font-size: 0.65rem;
+  }
+
+  .rules-step {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .step-num {
+    width: 24px;
+    height: 24px;
+    font-size: 0.72rem;
+  }
+
+  .step-text strong {
+    font-size: 0.82rem;
+  }
+
+  .step-text p,
+  .step-text li {
+    font-size: 0.75rem;
+  }
+
+  .hint-content {
+    padding: 16px 10px;
+  }
+
+  .hint-quote-symbol {
+    font-size: 30px;
+  }
+
+  .hint-body-text {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .reset-warning-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. VERY NARROW PHONES (<= 340px - covers 320px)
+   ------------------------------------------------------------ */
+@media screen and (max-width: 340px) {
+  .main-viewport {
+    padding: 8px 4px 24px;
+  }
+
+  /* Header Compact */
+  .header-container {
+    padding: 0 4px;
+    gap: 3px;
+  }
+
+  .brand-crest {
+    gap: 4px;
+  }
+
+  .crest-shield {
+    width: 26px;
+    height: 30px;
+    border-width: 1.5px;
+  }
+
+  .crest-icon {
+    font-size: 13px;
+  }
+
+  .brand-title {
+    font-size: 0.82rem;
+    letter-spacing: 0;
+  }
+
+  .header-player-pill {
+    padding: 2px 4px 2px 2px;
+    gap: 3px;
+  }
+
+  .header-avatar {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .header-xp-badge {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .btn-sound-toggle,
+  .btn-header-nav {
+    padding: 4px 5px;
+  }
+
+  .btn-sound-toggle .sound-icon,
+  .btn-header-nav .nav-icon {
+    font-size: 12px;
+  }
+
+  /* Profile Card */
+  .avatar-large {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .player-name-input {
+    font-size: 1.1rem;
+    max-width: 180px;
+  }
+
+  .rank-badge-pill {
+    font-size: 0.9rem;
+  }
+
+  .rank-name-text {
+    font-size: 0.85rem;
+  }
+
+  .level-badge-pill {
+    font-size: 0.65rem;
+  }
+
+  /* Career Statistics: 1 Column on <= 340px */
   .stat-cards-quad {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
+  }
+
+  .stat-quad-card {
+    padding: 12px 10px;
   }
 
   .secondary-metrics-grid {
     grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 8px;
   }
 
   .sec-metric-item {
     border-right: none;
     border-bottom: 1px solid rgba(223, 168, 54, 0.2);
-    padding: 10px 0;
+    padding: 6px 0;
   }
+
   .sec-metric-item:last-child {
     border-bottom: none;
   }
 
-  .game-arena-card {
-    padding: 20px 14px;
-    border-width: 2px;
+  /* Quiz Lifelines on 320px */
+  .lifelines-deck {
+    gap: 8px;
   }
 
-  .question-prompt-box {
-    padding: 16px;
+  .lifeline-coin {
+    width: 36px;
+    height: 36px;
   }
 
-  .question-text {
-    font-size: 1.05rem;
+  .lifeline-icon {
+    font-size: 16px;
   }
 
+  .lifeline-text {
+    font-size: 0.55rem;
+  }
+
+  .lifeline-status {
+    font-size: 0.45rem;
+  }
+
+  .timer-widget {
+    width: 56px;
+    height: 56px;
+  }
+
+  .timer-number {
+    font-size: 1.25rem;
+  }
+
+  /* Results on 320px */
   .results-stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .res-stat-value {
-    font-size: 1.45rem;
-  }
-
-  .result-heading {
-    font-size: 2.1rem;
-  }
-
-  .victory-heading {
-    font-size: 2.2rem;
-  }
-
-  .btn-royal-lock {
-    width: 100%;
-    padding: 14px 20px;
-    font-size: 1rem;
-  }
-
-  .primary-action-btn {
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
-
